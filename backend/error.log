@@ -1,0 +1,53 @@
+2024-11-13 16:36:16,208 - app - ERROR - Error during startup: Empty host (or extra comma in host list).
+2024-11-13 16:52:45,073 - app - ERROR - Error during startup: The DNS query name does not exist: _mongodb._tcp.cluster0.knf7w.mon>.
+2024-11-13 16:52:46,512 - app - ERROR - Error during startup: The DNS query name does not exist: _mongodb._tcp.cluster0.knf7w.mon>.
+2024-11-13 16:52:48,049 - app - ERROR - Error during startup: The DNS query name does not exist: _mongodb._tcp.cluster0.knf7w.mon>.
+2024-11-13 16:52:49,784 - app - ERROR - Error during startup: The DNS query name does not exist: _mongodb._tcp.cluster0.knf7w.mon>.
+2024-11-13 16:52:51,934 - app - ERROR - Error during startup: The DNS query name does not exist: _mongodb._tcp.cluster0.knf7w.mon>.
+2024-11-13 16:52:54,787 - app - ERROR - Error during startup: The DNS query name does not exist: _mongodb._tcp.cluster0.knf7w.mon>.
+2024-11-13 16:52:59,409 - app - ERROR - Error during startup: The DNS query name does not exist: _mongodb._tcp.cluster0.knf7w.mon>.
+2024-11-13 16:53:07,193 - app - ERROR - Error during startup: The DNS query name does not exist: _mongodb._tcp.cluster0.knf7w.mon>.
+2024-11-13 16:53:21,323 - app - ERROR - Error during startup: The DNS query name does not exist: _mongodb._tcp.cluster0.knf7w.mon>.
+2024-11-13 16:53:48,254 - app - ERROR - Error during startup: The DNS query name does not exist: _mongodb._tcp.cluster0.knf7w.mon>.
+2024-11-13 17:02:34,932 - app - ERROR - Error searching resources: 'Document' object has no attribute 'get'
+2024-11-13 17:19:21,397 - app - ERROR - Chat error: create_optimized_prompt() got an unexpected keyword argument 'search_mode'
+Traceback (most recent call last):
+  File "/app/app.py", line 247, in chat
+    prompt = create_optimized_prompt(
+TypeError: create_optimized_prompt() got an unexpected keyword argument 'search_mode'
+2024-11-13 17:27:59,354 - app - ERROR - Chat error: create_optimized_prompt() got an unexpected keyword argument 'search_mode'
+Traceback (most recent call last):
+  File "/app/app.py", line 247, in chat
+    # Process conversation history and create prompt
+TypeError: create_optimized_prompt() got an unexpected keyword argument 'search_mode'
+2024-11-13 17:29:47,902 - app - ERROR - Chat error: create_optimized_prompt() got an unexpected keyword argument 'search_mode'
+Traceback (most recent call last):
+  File "/app/app.py", line 247, in chat
+    # Process conversation history and create prompt
+TypeError: create_optimized_prompt() got an unexpected keyword argument 'search_mode'
+2024-11-13 17:36:05,573 - app - ERROR - Chat error: 'str' object has no attribute 'value'
+Traceback (most recent call last):
+  File "/app/app.py", line 254, in chat
+    search_mode=request.search_mode.value
+AttributeError: 'str' object has no attribute 'value'
+2024-11-13 18:55:47,882 - app - ERROR - Error adding resource: Error code: 400 - {'error': {'message': "'$.input' is invalid. Please check the API reference: https://platform.openai.com/docs/api-reference.", 'type': 'invalid_request_error', 'param': None, 'code': None}}
+2024-11-13 18:58:55,263 - app - ERROR - Vector store error: Error code: 400 - {'error': {'message': "'$.input' is invalid. Please check the API reference: https://platform.openai.com/docs/api-reference.", 'type': 'invalid_request_error', 'param': None, 'code': None}}
+2024-11-13 18:58:55,263 - app - ERROR - Error adding resource: 500: Vector store error: Error code: 400 - {'error': {'message': "'$.input' is invalid. Please check the API reference: https://platform.openai.com/docs/api-reference.", 'type': 'invalid_request_error', 'param': None, 'code': None}}
+2024-11-13 19:03:13,233 - app - ERROR - Embedding error: Error code: 400 - {'error': {'message': "'$.input' is invalid. Please check the API reference: https://platform.openai.com/docs/api-reference.", 'type': 'invalid_request_error', 'param': None, 'code': None}}
+2024-11-13 19:03:13,233 - app - ERROR - Error adding resource: 500: Embedding error: Error code: 400 - {'error': {'message': "'$.input' is invalid. Please check the API reference: https://platform.openai.com/docs/api-reference.", 'type': 'invalid_request_error', 'param': None, 'code': None}}
+2024-11-13 19:05:36,392 - app - ERROR - Embedding error details: Error code: 400 - {'error': {'message': "'$.input' is invalid. Please check the API reference: https://platform.openai.com/docs/api-reference.", 'type': 'invalid_request_error', 'param': None, 'code': None}}
+2024-11-13 19:05:36,392 - app - ERROR - Resource content type: <class 'str'>
+2024-11-13 19:05:36,392 - app - ERROR - Resource content preview: 
+2024-11-13 19:05:36,392 - app - ERROR - Error adding resource: 500: Embedding error: Error code: 400 - {'error': {'message': "'$.input' is invalid. Please check the API reference: https://platform.openai.com/docs/api-reference.", 'type': 'invalid_request_error', 'param': None, 'code': None}}
+2024-11-13 19:05:49,909 - app - ERROR - Embedding error details: Error code: 400 - {'error': {'message': "'$.input' is invalid. Please check the API reference: https://platform.openai.com/docs/api-reference.", 'type': 'invalid_request_error', 'param': None, 'code': None}}
+2024-11-13 19:05:49,909 - app - ERROR - Resource content type: <class 'str'>
+2024-11-13 19:05:49,909 - app - ERROR - Resource content preview: 
+2024-11-13 19:05:49,909 - app - ERROR - Error adding resource: 500: Embedding error: Error code: 400 - {'error': {'message': "'$.input' is invalid. Please check the API reference: https://platform.openai.com/docs/api-reference.", 'type': 'invalid_request_error', 'param': None, 'code': None}}
+2024-11-13 19:22:50,031 - app - ERROR - Error searching resources: name 'collection' is not defined
+2024-11-13 19:39:53,888 - app - ERROR - Error adding resource: 2 validation errors for Resource
+id
+  Field required [type=missing, input_value={'title': 'Diagnosis of E...888478', 'type': 'url'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+date_added
+  Field required [type=missing, input_value={'title': 'Diagnosis of E...888478', 'type': 'url'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing

@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: backend/Dockerfile
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    volumes:
+      # Mount the entire backend directory for development
+      - ./backend:/app
+      # Exclude the virtual environment and cache directories
+      - /app/__pycache__
+      - /app/.pytest_cache
+      - /app/venv
+    networks:
+      - alzheimer-bot-network
+    command: uvicorn app:app --host 0.0.0.0 --port 8000 --reload --reload-dir /app
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: backend/Dockerfile
+    ports:
+      - "8501:8501"
+    env_file:
+      - .env
+    environment:
+      - API_URL=http://backend:8000
+    volumes:
+      # Mount the entire frontend directory for development
+      - ./frontend:/app
+      # Exclude the virtual environment and cache directories
+      - /app/__pycache__
+      - /app/.streamlit/config.toml
+      - /app/venv
+    networks:
+      - alzheimer-bot-network
+    depends_on:
+      - backend
+    command: streamlit run app.py --server.port=8501 --server.address=0.0.0.0 --server.runOnSave=true
+    restart: unless-stopped
+
+networks:
+  alzheimer-bot-network:
+    driver: bridge

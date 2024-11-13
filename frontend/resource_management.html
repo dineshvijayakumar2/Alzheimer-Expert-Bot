@@ -1,0 +1,96 @@
+<!-- templates/resource_management.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resource Management</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold mb-8">Resource Management</h1>
+
+        <!-- Tabs -->
+        <div class="mb-8">
+            <div class="border-b border-gray-200">
+                <nav class="-mb-px flex" aria-label="Tabs">
+                    <button class="tab-button active" data-tab="search">Search Resources</button>
+                    <button class="tab-button" data-tab="add">Add Resource</button>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Search Tab -->
+        <div id="search-tab" class="tab-content active">
+            <div class="mb-4 flex gap-4">
+                <input type="text" id="search-input" placeholder="Search resources..." class="flex-1 p-2 border rounded">
+                <button id="search-button" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Search</button>
+            </div>
+
+            <div class="flex gap-4 mb-4">
+                <label class="inline-flex items-center">
+                    <input type="checkbox" value="Clinical" checked class="resource-type">
+                    <span class="ml-2">Clinical</span>
+                </label>
+                <label class="inline-flex items-center">
+                    <input type="checkbox" value="Research" checked class="resource-type">
+                    <span class="ml-2">Research</span>
+                </label>
+                <label class="inline-flex items-center">
+                    <input type="checkbox" value="Guidelines" checked class="resource-type">
+                    <span class="ml-2">Guidelines</span>
+                </label>
+            </div>
+
+            <div id="search-results" class="space-y-4"></div>
+        </div>
+
+        <!-- Add Resource Tab -->
+        <div id="add-tab" class="tab-content hidden">
+            <form id="resource-form" class="space-y-4">
+                <div>
+                    <label class="block mb-1">Title</label>
+                    <input type="text" name="title" required class="w-full p-2 border rounded">
+                </div>
+
+                <div>
+                    <label class="block mb-1">Resource Type</label>
+                    <select name="type" class="w-full p-2 border rounded">
+                        <option value="Clinical">Clinical</option>
+                        <option value="Research">Research</option>
+                        <option value="Guidelines">Guidelines</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block mb-1">Content Type</label>
+                    <select id="content-type" class="w-full p-2 border rounded">
+                        <option value="url">URL</option>
+                        <option value="text">Direct Text</option>
+                    </select>
+                </div>
+
+                <div id="url-input">
+                    <label class="block mb-1">URL</label>
+                    <input type="url" name="url" class="w-full p-2 border rounded">
+                </div>
+
+                <div id="text-input" class="hidden">
+                    <label class="block mb-1">Content</label>
+                    <textarea name="content" class="w-full p-2 border rounded" rows="4"></textarea>
+                </div>
+
+                <div>
+                    <label class="block mb-1">Tags (comma-separated)</label>
+                    <input type="text" name="tags" class="w-full p-2 border rounded">
+                </div>
+
+                <button type="submit" class="w-full px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+                    Add Resource
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
